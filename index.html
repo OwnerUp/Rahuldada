@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090a0d">
+  <meta name="description" content="Rahul Dada — cricket toss, match and session updates on Telegram.">
+  <title>Rahul Dada | Cricket Updates</title>
+  <style>
+    :root{color-scheme:dark;--bg:#090a0d;--panel:#121419;--muted:#9b9da5;--white:#f7f5f2;--red:#d51d32;--gold:#d6b77c;--line:rgba(255,255,255,.1)}
+    *{box-sizing:border-box}
+    html{min-height:100%;background:var(--bg)}
+    body{margin:0;min-height:100vh;color:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(ellipse at 50% 20%,rgba(105,20,32,.30),transparent 38%),radial-gradient(ellipse at 50% 78%,rgba(41,45,57,.22),transparent 46%),#090a0d;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;background:linear-gradient(115deg,transparent 0 48%,rgba(255,255,255,.09) 48.15%,transparent 48.4% 100%),repeating-linear-gradient(0deg,transparent 0 47px,rgba(255,255,255,.035) 48px,transparent 49px);mask-image:linear-gradient(to bottom,black,transparent 88%)}
+    .wrap{position:relative;min-height:100svh;display:grid;place-items:center;padding:28px 16px 38px}
+    .page{width:min(100%,430px);position:relative;padding:28px 24px 26px;border:1px solid rgba(255,255,255,.12);border-radius:30px;background:linear-gradient(155deg,rgba(25,27,33,.96),rgba(12,13,17,.97) 65%);box-shadow:0 30px 90px rgba(0,0,0,.58),inset 0 1px 0 rgba(255,255,255,.06);overflow:hidden}
+    .page:before{content:"";position:absolute;left:13%;right:13%;top:-120px;height:220px;background:radial-gradient(ellipse,rgba(190,25,45,.22),transparent 68%);pointer-events:none}
+    .brand{position:relative;text-align:center;font-size:10px;font-weight:700;letter-spacing:.24em;color:#c4a878;text-transform:uppercase}
+    .hero{text-align:center;position:relative;padding-top:23px}
+    .portrait-shell{position:relative;width:154px;height:154px;margin:0 auto 18px;border-radius:50%;padding:4px;background:linear-gradient(135deg,#f4e1b5 0%,#a91f30 48%,#382128 100%);box-shadow:0 0 0 8px rgba(193,30,49,.07),0 12px 42px rgba(0,0,0,.55);animation:portraitPop 4.8s cubic-bezier(.2,.8,.2,1) infinite}
+    .portrait-shell:after{content:"";position:absolute;inset:-9px;border-radius:50%;border:1px solid rgba(230,199,148,.22);animation:ring 4.8s ease-in-out infinite}
+    .portrait{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%;border:2px solid rgba(8,9,12,.88)}
+    h1{position:relative;margin:0;color:#fff;font-family:Georgia,"Times New Roman",serif;font-size:clamp(36px,10vw,48px);font-weight:600;line-height:1.04;letter-spacing:-.045em;text-shadow:0 3px 22px rgba(0,0,0,.5)}
+    .sub{margin:11px auto 0;color:#b8b8bd;font-size:13px;letter-spacing:.025em}
+    .rule{width:44px;height:2px;margin:19px auto 21px;border-radius:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+    .section-label{margin:0 0 11px;color:#848690;text-align:center;font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+    .updates{display:grid;gap:9px}
+    .update{display:flex;align-items:center;gap:13px;min-height:57px;padding:10px 14px;border:1px solid rgba(255,255,255,.095);border-radius:15px;background:linear-gradient(110deg,rgba(255,255,255,.065),rgba(255,255,255,.025));box-shadow:inset 0 1px 0 rgba(255,255,255,.035);animation:cardPop .7s both;transform-origin:center}
+    .update:nth-child(1){animation-delay:.12s}.update:nth-child(2){animation-delay:.24s}.update:nth-child(3){animation-delay:.36s}
+    .icon{display:grid;place-items:center;flex:0 0 34px;width:34px;height:34px;border:1px solid rgba(214,183,124,.32);border-radius:11px;background:rgba(214,183,124,.08);color:#e5c88e;font-size:15px}
+    .update span:last-child{font-size:11px;font-weight:750;letter-spacing:.14em;color:#f0eef0}
+    .join{position:relative;display:flex;align-items:center;justify-content:center;gap:11px;width:100%;min-height:59px;margin:20px 0 0;border-radius:16px;border:1px solid rgba(255,210,165,.6);background:linear-gradient(105deg,#851725,#c81f34 48%,#8f1926);color:white;text-decoration:none;font-size:13px;font-weight:800;letter-spacing:.105em;box-shadow:0 12px 30px rgba(168,20,40,.23),inset 0 1px 0 rgba(255,255,255,.23);animation:buttonPop 3.4s ease-in-out .9s infinite;transition:transform .22s,box-shadow .22s,filter .22s}
+    .join:hover,.join:focus-visible{transform:translateY(-3px) scale(1.015);box-shadow:0 16px 34px rgba(190,24,47,.36),inset 0 1px 0 rgba(255,255,255,.25);filter:brightness(1.08);outline:none}
+    .tg{width:19px;height:19px;fill:currentColor}
+    .note{margin:16px 0 0;text-align:center;color:#747680;font-size:10px;letter-spacing:.04em}
+    .footer{margin-top:21px;padding-top:15px;border-top:1px solid var(--line);text-align:center;color:#666973;font-size:9px;letter-spacing:.08em;text-transform:uppercase}
+    @keyframes portraitPop{0%,100%{transform:scale(1)}8%{transform:scale(1.045)}16%{transform:scale(1)} }
+    @keyframes ring{0%,100%{transform:scale(.98);opacity:.38}10%{transform:scale(1.07);opacity:.78}22%{transform:scale(1);opacity:.45}}
+    @keyframes cardPop{0%{opacity:0;transform:translateY(10px) scale(.97)}70%{opacity:1;transform:translateY(-2px) scale(1.012)}100%{opacity:1;transform:translateY(0) scale(1)}}
+    @keyframes buttonPop{0%,72%,100%{transform:scale(1)}78%{transform:scale(1.035)}84%{transform:scale(.99)}90%{transform:scale(1.012)}}
+    @media(max-width:380px){.page{padding:25px 18px 22px;border-radius:26px}.portrait-shell{width:140px;height:140px}.update{min-height:53px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="page" aria-label="Rahul Dada cricket updates">
+      <div class="brand">Cricket updates on Telegram</div>
+      <header class="hero">
+        <div class="portrait-shell"><img class="portrait" src="assets/rahul-dada-dp.jpg" alt="Rahul Dada channel profile picture"></div>
+        <h1>Rahul Dada</h1>
+        <p class="sub">Cricket ke har update ke saath</p>
+        <div class="rule"></div>
+      </header>
+      <p class="section-label">Channel par paayein</p>
+      <div class="updates">
+        <div class="update"><span class="icon" aria-hidden="true">◉</span><span>TOSS UPDATE</span></div>
+        <div class="update"><span class="icon" aria-hidden="true">▰</span><span>MATCH UPDATE</span></div>
+        <div class="update"><span class="icon" aria-hidden="true">▥</span><span>SESSION UPDATE</span></div>
+      </div>
+      <a class="join" href="https://t.me/+WwzlK3CUy8MwOGM1" target="_blank" rel="noopener noreferrer" aria-label="Join Rahul Dada on Telegram">
+        <svg class="tg" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 4.6 18.2 20c-.25 1.1-.9 1.37-1.83.85l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1.03.5l.37-5.14 9.35-8.45c.41-.36-.09-.56-.64-.2L5.38 13.42.4 11.86c-1.08-.34-1.1-1.08.22-1.6L20.1 2.7c.9-.33 1.69.22 1.4 1.9Z"/></svg>
+        JOIN TELEGRAM
+      </a>
+      <p class="note">Tap to open the channel</p>
+      <footer class="footer">Rahul Dada · Cricket community</footer>
+    </section>
+  </main>
+</body>
+</html>
